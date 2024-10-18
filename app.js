@@ -39,6 +39,11 @@ function displayCars(cars) {
         `
         carContainer.appendChild(carCard)
     })
+
+    if (cars.length === 0) {
+        carContainer.innerHTML = "No data Found"
+
+    }
 }
 
 // function to create filter buttons
@@ -69,4 +74,18 @@ function filterCarsByName(name){
 
     displayCars(filteredCar)
 }
+
+function searchCars(query) {
+    const searchedCars = allCars.filter(car => 
+        car.name.toLowerCase().includes(query.toLowerCase()) ||
+        car.model.toLowerCase().includes(query.toLowerCase())
+    )
+    console.log(searchedCars);
+    displayCars(searchedCars);
+}
+
+document.getElementById("searchInput").addEventListener("input", (event) =>{
+    searchCars(event.target.value)
+    console.log(event.target.value);
+})
 window.onload = fetchCarData()

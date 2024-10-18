@@ -4,10 +4,23 @@ body {
     margin: 0;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 h1{
     margin-bottom: 20px;
+}
+
+#searchInput{
+    padding: 10px;
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 20px;
+    width: 300px;
+    font-size: 16px;
+
 }
 
 #filterButtons {
@@ -19,6 +32,7 @@ h1{
     margin: 5px;
     font-size: 16px;
     cursor: pointer;
+    text-align: center;
     border: none;
     background-color: #4caf30;
     color: white;
